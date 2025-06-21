@@ -1,0 +1,32 @@
+# Bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+
+# SQLite DB and journal
+db.sqlite3
+*.sqlite3-journal
+
+# Virtual environment
+env/
+venv/
+
+# User uploads and generated files
+media/
+converted/
+
+# Static files collected for production
+staticfiles/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# Editor settings
+.vscode/
+.idea/
+
+# Packaging metadata
+*.egg-info/

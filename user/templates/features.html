@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .feature-icon {
+        font-size: 2rem;
+        color: #0d6efd;
+    }
+
+    .card-feature:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: 0.3s ease-in-out;
+    }
+</style>
+
+<div class="container mt-5 mb-5">
+    <h2 class="text-center mb-4">✨ Features of myfiles</h2>
+
+    <p class="text-center text-muted mb-5">
+        myfiles is your all-in-one file converter and secure file manager. Below is a complete guide to what you can do
+        here!
+    </p>
+    <hr>
+    <div class="row g-4">
+        <!-- Feature 1 -->
+        <div class="col-md-6">
+            <div class="card card-feature shadow-lg h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="feature-icon fas fa-file-upload me-2"></i>Upload Files</h5>
+                    <p class="card-text">
+                        Upload your documents, images, PDFs, and more directly to your personal dashboard. Files are
+                        securely stored and accessible anytime.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="col-md-6">
+            <div class="card card-feature shadow-lg h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="feature-icon fas fa-exchange-alt me-2"></i>File Conversion</h5>
+                    <p class="card-text">
+                        Convert images (JPG, PNG), PDFs, DOCX files, and more with just one click. Smart processing and
+                        fast results!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="col-md-6">
+            <div class="card card-feature shadow-lg h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="feature-icon fas fa-user-circle me-2"></i>Personal Dashboard</h5>
+                    <p class="card-text">
+                        See your uploaded or converted files, manage downloads, and access recent activity from a clean
+                        and secure dashboard.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="col-md-6">
+            <div class="card card-feature shadow-lg h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="feature-icon fas fa-lock me-2"></i>Secure Download</h5>
+                    <p class="card-text">
+                        Files are downloadable only by you using our secure link system — no public file leaks or unsafe
+                        URLs.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="col-md-6">
+            <div class="card card-feature shadow-lg h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="feature-icon fas fa-user-plus me-2"></i>Easy Sign Up & Login</h5>
+                    <p class="card-text">
+                        Create your account in seconds. All data is session protected, and login gives instant access to
+                        your files.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="col-md-6">
+            <div class="card card-feature shadow-lg h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="feature-icon fas fa-laptop-code me-2"></i>Fully Responsive</h5>
+                    <p class="card-text">
+                        Use myfiles on mobile, tablet, or desktop. The design is mobile-friendly, lightweight, and
+                        modern.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mt-4">
+        {% if not request.session.email %}
+        <a href="{% url 'signup' %}" class="btn btn-info btn-lg px-4 py-3 rounded-pill fw-bold">Create Free Account</a>
+        <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-lg px-4 py-3 rounded-pill fw-bold">Log In</a>
+        {% else %}
+        <button type="button" class="btn btn-primary btn-lg rounded-pill" data-bs-toggle="modal"
+            data-bs-target="#uploadModal"><i class="fa-solid fa-upload fa-bounce"></i>
+            Upload Your Files
+        </button>
+
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us - myfiles{% endblock %}
+
+{% block content %}
+<!-- 🚀 Hero Section -->
+<section class="about-hero py-5 bg-gradient-dark text-bg-white position-relative overflow-hidden">
+  <div class="container position-relative z-index-1">
+    <div class="row align-items-center flex-wrap">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">
+          About <span class="text-primary">myfiles</span>
+        </h1>
+        <p class="lead fs-4 mb-4 animate__animated animate__fadeInUp">
+          Your trusted platform for seamless, secure file conversions.
+        </p>
+        <div class="d-flex flex-wrap gap-3 animate__animated animate__fadeInUp">
+          <a href="{% url 'conversion_type' %}" class="btn btn-primary btn-lg px-4 rounded-pill fw-bold">
+            <i class="fa-solid fa-arrow-right-to-bracket me-2"></i> Start Converting
+          </a>
+          <a href="{% url 'features' %}" class="btn btn-outline-secondary btn-lg px-4 rounded-pill fw-bold">
+            <i class="fa-solid fa-gears fa-spin me-2"></i> Our Features
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 animate__animated animate__fadeIn text-center">
+        <img src="{% static 'images/Welcome.png' %}" alt="File Conversion" class="img-fluid rounded-4 shadow-lg"
+          loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🌟 Mission Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center g-5 flex-wrap">
+      <div class="col-lg-6 order-lg-2">
+        <div class="mission-statement p-4 bg-white rounded-4 shadow-sm">
+          <h2 class="display-5 fw-bold mb-4">Our Mission</h2>
+          <p class="fs-5 mb-4"><strong>myfiles</strong> was developed from a simple idea: file conversion shouldn't be
+            complicated, expensive, or insecure.</p>
+          <p class="text-muted fs-5">We're committed to providing:</p>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-check-circle text-success mt-1 me-3 fs-5 fa-bounce icon-hover"></i>
+              <span><strong>Zero-cost tools</strong> with no hidden limitations</span>
+            </li>
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-check-circle text-success mt-1 me-3 fs-5 fa-bounce icon-hover"></i>
+              <span><strong>Better security</strong> for all your documents</span>
+            </li>
+            <li class="d-flex align-items-start">
+              <i class="fas fa-check-circle text-success mt-1 me-3 fs-5 fa-bounce icon-hover"></i>
+              <span><strong>One-click solutions</strong> that just work</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-1">
+        <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg">
+          <img src="{% static 'images/secure-docs.png' %}" alt="Secure document conversion"
+            class="img-fluid object-fit-cover" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✨ Features Grid -->
+<section id="features" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold">Why Professionals Choose Us</h2>
+      <p class="text-muted fs-5 mx-auto" style="max-width: 700px;">
+        Trusted by students, businesses, and creatives worldwide for critical file conversions
+      </p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+      <!-- Feature 1: JPG to PDF -->
+      <div class="col">
+        <div class="feature-card h-100 p-4 bg-white rounded-4 shadow-sm text-center card-hover">
+          <div
+            class="icon-wrapper bg-danger bg-opacity-10 mb-4 mx-auto rounded-circle d-flex align-items-center justify-content-center"
+            style="width: 80px; height: 80px;">
+            <i class="fa-solid fa-file-pdf fs-2 text-danger fa-fade icon-hover"></i>
+          </div>
+          <h3 class="h4 fw-bold mb-3">JPG to PDF</h3>
+          <p class="text-muted mb-0">Convert images to print-ready PDFs with perfect formatting and no quality loss.</p>
+        </div>
+      </div>
+
+      <!-- Feature 2: PNG to JPG -->
+      <div class="col">
+        <div class="feature-card h-100 p-4 bg-white rounded-4 shadow-sm text-center card-hover">
+          <div
+            class="icon-wrapper bg-success bg-opacity-10 mb-4 mx-auto rounded-circle d-flex align-items-center justify-content-center"
+            style="width: 80px; height: 80px;">
+            <i class="fa-solid fa-image fs-2 text-success fa-bounce icon-hover"></i>
+          </div>
+          <h3 class="h4 fw-bold mb-3">PNG to JPG</h3>
+          <p class="text-muted mb-0">Optimize images for web with smart compression that preserves details.</p>
+        </div>
+      </div>
+
+      <!-- Feature 3: Secure Storage -->
+      <div class="col">
+        <div class="feature-card h-100 p-4 bg-white rounded-4 shadow-sm text-center card-hover">
+          <div
+            class="icon-wrapper bg-primary bg-opacity-10 mb-4 mx-auto rounded-circle d-flex align-items-center justify-content-center"
+            style="width: 80px; height: 80px;">
+            <i class="fa-solid fa-cloud-arrow-up fs-2 text-primary fa-flip icon-hover"></i>
+          </div>
+          <h3 class="h4 fw-bold mb-3">Secure Storage</h3>
+          <p class="text-muted mb-0">Access converted files anytime from your encrypted personal dashboard.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- 📱 How It Works -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold">How myfiles Works</h2>
+      <p class="text-muted fs-5">Convert files in 4 simple steps - no technical skills needed</p>
+    </div>
+    <div class="row g-4 flex-wrap justify-content-center">
+      {% for i in "1234" %}
+      <div class="col-lg-3 col-md-6">
+        <div class="step-card h-100 p-4 bg-white rounded-4 shadow-sm text-center card-hover">
+          <div
+            class="step-badge bg-primary text-white d-flex align-items-center justify-content-center mb-3 rounded-circle"
+            style="width: 40px; height: 40px;">{{ i }}</div>
+          <img src="{% static 'images/step'|add:i|add:'.png' %}" alt="Step {{ i }}" class="img-fluid mb-3"
+            style="height: 100px; object-fit: contain;">
+          <h3 class="h5 fw-bold mb-3">
+            {% if i == '1' %}Sign Up{% elif i == '2' %}Upload Files{% elif i == '3' %}Choose Format{% elif i == '4'
+            %}Download{% endif %}
+          </h3>
+          <p class="mb-0">
+            {% if i == '1' %}Create your free account in under 60 seconds{% elif i == '2' %}Drag & drop your files
+            directly into the converter{% elif i == '3' %}Select your target format from our optimized presets{% elif i
+            == '4' %}Get your converted file instantly or save to dashboard{% endif %}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 🎯 Final CTA -->
+<section class="py-5 bg-dark text-white text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="display-5 fw-bold mb-4">Ready to Experience Stress-Free Conversions?</h2>
+        <p class="lead mb-5 opacity-75">Join over 500,000 users who trust myfiles for their document needs</p>
+        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+          {% if not request.session.email %}
+          <a href="/signup/" class="btn btn-primary btn-lg px-4 py-3 rounded-pill fw-bold">
+            <i class="fa-solid fa-user-plus me-2"></i> Get Started Free
+          </a>
+          <a href="/login/" class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill fw-bold">
+            <i class="fa-solid fa-user-check me-2"></i> Existing User? Log In
+          </a>
+          {% else %}
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary btn-lg rounded-pill" data-bs-toggle="modal"
+            data-bs-target="#uploadModal"><i class="fa-solid fa-upload fa-bounce"></i>
+            Upload Files
+          </button>
+
+          <a href="{% url 'conversion_type' %}" class="btn btn-outline-light px-4 py-3 rounded-pill fw-bold"><i class="fas fa-exchange-alt me-2 fa-flip"></i>Convert
+            your
+            Files
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

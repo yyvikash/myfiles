@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}My All Files - myfiles{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4"><i class="fa-solid fa-folder-open text-primary me-2"></i>My Uploaded Files</h2>
+
+  <!-- 🔍 Search Filter -->
+  <form method="get" class="row g-3 mb-4">
+    <div class="col-md-4">
+      <input type="text" name="q" class="form-control" placeholder="Search by file name or type..."
+        value="{{ request.GET.q }}">
+    </div>
+    <div class="col-md-3">
+      <input type="date" name="date" class="form-control" value="{{ request.GET.date }}">
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-outline-primary w-100"><i class="fa-solid fa-filter"></i> Search</button>
+    </div>
+    <div class="col-md-2">
+      <a href="{% url 'all_files' %}" class="btn btn-outline-secondary w-100"><i class="fa-solid fa-rotate-left"></i>
+        Reset</a>
+    </div>
+  </form>
+
+  {% if files %}
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle">
+      <thead class="table-light text-center">
+        <tr>
+          <th>#</th>
+          <th>File Name</th>
+          <th>Type</th>
+          <th>Upload Date</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for file in files %}
+        <tr>
+          <td class="text-center">{{ forloop.counter }}</td>
+          <td>{{ file.File_Name }}</td>
+          <td class="text-center">{{ file.File_Type }}</td>
+          <td class="text-center">{{ file.Upload_Date }}</td>
+          <td>{{ file.Description }}</td>
+          <td class="text-center d-flex justify-content-center gap-2 flex-wrap">
+            <a href="{% url 'secure_download' file.id %}" class="btn btn-outline-primary btn-sm"
+              data-bs-toggle="tooltip" title="Download File">
+              <i class="fa-solid fa-download"></i>
+            </a>
+            <a href="{% url 'delete_file' file.id %}" class="btn btn-outline-danger btn-sm"
+              onclick="return confirm('Delete this file?')" data-bs-toggle="tooltip" title="Delete File">
+              <i class="fa-solid fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <div class="alert alert-warning">No files found.</div>
+  {% endif %}
+</div>
+<!-- Button trigger modal -->
+ <div class="container my-3 text-center w-25">
+
+   <button type="button" class="btn btn-primary btn-lg rounded-pill" data-bs-toggle="modal"
+   data-bs-target="#uploadModal"><i class="fa-solid fa-upload fa-bounce"></i>
+   Upload Your Files
+  </button>
+</div>
+<script>
+  // Enable Bootstrap tooltips
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  tooltipTriggerList.forEach(t => new bootstrap.Tooltip(t));
+</script>
+{% endblock %}

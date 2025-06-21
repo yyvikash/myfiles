@@ -1,0 +1,77 @@
+<footer class="bg-dark text-light pt-5 pb-3 mt-1">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      
+      <!-- Brand Info -->
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold text-info"><i class="fas fa-folder-open me-2"></i>myfiles</h5>
+        <p class="small text-bg-muted">Your simple and secure file converter. Powered by privacy, built for speed.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4 mb-4">
+        <h6 class="fw-bold text-white mb-3"><i class="fas fa-link me-2 text-warning"></i>Quick Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="{% url 'home' %}" class="footer-link">Home</a></li>
+          <li><a href="{% url 'about' %}" class="footer-link">About</a></li>
+          <li><a href="{% url 'contact' %}" class="footer-link">Contact</a></li>
+          <li><a href="{% url 'contact' %}" class="footer-link">need help?</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="col-md-4 mb-4">
+        <h6 class="fw-bold text-white mb-3"><i class="fas fa-share-alt me-2 text-success"></i>Follow Us</h6>
+        <div class="d-flex justify-content-center justify-content-md-start gap-3">
+          <a href="https://www.facebook.com/profile.php?id=100014932511038" target="_blank" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/yy_vikash?igsh=MXgxN2F5OHphbGwwdA==" target="_blank" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/vikash-kumar-361704321?utm_source=share&utm_campaign=share_via&    utm_content=profile&utm_medium=android_app" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/yyvikash" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="bg-secondary">
+
+    <!-- Bottom Text + Copyright Link -->
+    <div class="text-center small text-bg-muted mt-2">
+      <a href="https://vikashkumar07.pythonanywhere.com/" target="_blank" class="text-info text-decoration-none">
+        <i class="fas fa-copyright me-1"></i> &copy; {{ now|default:"2025" }} <strong>myfiles</strong>. All rights reserved.
+      </a>
+    </div>
+  </div>
+
+  <style>
+    .footer-link {
+      color: #ccc;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .footer-link:hover {
+      color: #0dcaf0;
+      text-decoration: underline;
+    }
+
+    .social-icon {
+      font-size: 22px; /* bigger icons */
+      color: #bbb;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .social-icon:hover {
+      color: #0dcaf0;
+      transform: scale(1.3);
+    }
+
+    footer {
+      animation: fadeInFooter 0.6s ease-in-out;
+    }
+
+    @keyframes fadeInFooter {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</footer>

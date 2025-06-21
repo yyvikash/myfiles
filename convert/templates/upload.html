@@ -1,0 +1,41 @@
+<!-- 🔘 Upload Button -->
+<div class="text-center my-3">
+  <button class="btn btn-primary btn-lg rounded-pill" data-bs-toggle="modal" data-bs-target="#uploadModal">
+    <i class="fa-solid fa-cloud-arrow-up fa-bounce me-2"></i>Upload File
+  </button>
+</div>
+
+<!-- 🔽 Upload Modal -->
+<div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow-lg border-0">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="uploadModalLabel">
+          <i class="fa-solid fa-upload me-2"></i>Upload a File
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="{% url 'upload_file' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="fileInput" class="form-label">Choose file (Max: 30MB)</label>
+            <input type="file" class="form-control" id="fileInput" name="file" accept="*" required>
+          </div>
+          <div class="mb-3">
+            <label for="desc" class="form-label">Description (optional)</label>
+            <textarea class="form-control" id="desc" name="description" rows="3" placeholder="E.g., Project report or images..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">
+            <i class="fa-solid fa-check-circle me-1"></i>Upload
+          </button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

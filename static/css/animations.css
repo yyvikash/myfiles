@@ -1,0 +1,64 @@
+/* static/css/animations.css */
+@keyframes fadeUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 1s ease-out;
+}
+
+/* Add to your CSS file */
+.feature-card {
+  transition: all 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+}
+
+/* Gradient hero background */
+.about-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #0ea5e9 100%);
+}
+
+/* Animated feature cards */
+.feature-card {
+  transition: all 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+/* Timeline connector */
+.timeline-connector {
+  position: absolute;
+  height: 4px;
+  background: #0d6efd;
+  width: calc(100% - 120px);
+  top: 50%;
+  left: 60px;
+  z-index: 0;
+  opacity: 0.2;
+}
+
+/* Step badges */
+.step-badge {
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+  position: absolute;
+  left: 20px;
+  top: -20px;
+}

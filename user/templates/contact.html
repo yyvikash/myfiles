@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact Us - myfiles{% endblock %}
+{% block content %}
+<p class="alert alert-secondary text-center">
+  <i class="fas fa-bug me-2 text-danger"></i>
+  If you're facing any technical issues, bugs, or have feedback or need help — please send us a message using the form below.
+</p>
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+
+      <h2 class="mb-4 text-center">📬 Contact Us</h2>
+
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      <form method="POST" class="shadow p-4 rounded bg-white">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label class="form-label fw-bold">Full Name</label>
+          <input type="text" class="form-control" name="name" required placeholder="Your Name">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-bold">Email</label>
+          <input type="email" class="form-control" name="email" required placeholder="your@email.com">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-bold">Subject</label>
+          <input type="text" class="form-control" name="subject" required placeholder="Subject">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-bold">Message</label>
+          <textarea class="form-control" name="message" rows="5" required placeholder="Write your message..."></textarea>
+        </div>
+
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary btn-lg">
+            <i class="fas fa-paper-plane me-2"></i> Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

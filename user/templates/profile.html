@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Profile - myfiles{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2><i class="fas fa-user-circle text-primary me-2"></i> Your Profile</h2>
+
+  <div class="row mt-4">
+    <div class="col-md-4 text-center">
+      {% if user.Profile_pic %}
+      <img src="/{{ user.Profile_pic }}" class="rounded-circle shadow mb-3" width="150" height="150" style="object-fit: cover;">
+      {% else %}
+      <div class="initials-circle mx-auto mb-3">{{ user.get_initials }}</div>
+      {% endif %}
+
+      <h4 class="mb-1">{{ user.First_name }} {{ user.Last_name }}</h4>
+      <p class="text-muted">{{ user.Email }}</p>
+      <p><i class="fas fa-calendar-alt text-secondary me-2"></i>Joined on {{ user.Reg_date }}</p>
+    </div>
+
+    <div class="col-md-8">
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label fw-bold">First Name</label>
+            <input type="text" name="first_name" class="form-control" value="{{ user.First_name }}" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label fw-bold">Last Name</label>
+            <input type="text" name="last_name" class="form-control" value="{{ user.Last_name }}" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label fw-bold">Mobile</label>
+            <input type="text" name="mobile" class="form-control" value="{{ user.Mobile }}">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label fw-bold">Profile Picture</label>
+            <input type="file" name="profile_pic" class="form-control">
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+          <button type="submit" class="btn btn-success"><i class="fas fa-save me-2"></i>Save Changes</button>
+          <a href="{% url 'change_password' %}" class="btn btn-outline-warning">
+            <i class="fas fa-key me-1"></i> Change Password
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+.initials-circle {
+  width: 150px;
+  height: 150px;
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #0d6efd;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+</style>
+{% endblock %}
