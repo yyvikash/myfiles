@@ -10,7 +10,7 @@
   <div class="row mt-4">
     <div class="col-md-4 text-center">
       {% if user.Profile_pic %}
-      <img src="/{{ user.Profile_pic }}" class="rounded-circle shadow mb-3" width="150" height="150" style="object-fit: cover;">
+      <img src="{{ user.Profile_pic.url }}" class="rounded-circle shadow mb-3" width="150" height="150" style="object-fit: cover;">
       {% else %}
       <div class="initials-circle mx-auto mb-3">{{ user.get_initials }}</div>
       {% endif %}
