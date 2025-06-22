@@ -19,7 +19,6 @@ pillow==10.4.0
 PyMuPDF==1.26.1
 PyPDF2==3.0.1
 python-docx==1.1.2
-pywin32==310
 sqlparse==0.5.1
 termcolor==3.1.0
 tqdm==4.67.1
