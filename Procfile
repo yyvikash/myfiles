@@ -1,1 +1,1 @@
-web: gunicorn myfiles.wsgi
+web: gunicorn myfiles.wsgi:application
